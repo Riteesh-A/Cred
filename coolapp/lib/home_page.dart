@@ -46,7 +46,6 @@ class _HomePageState extends State<HomePage> {
               itemCount: section.length + 1, // +1 for the title section
               itemBuilder: (context, index) {
                 if (index == 0) {
-                  // First item is the "explore CRED" title with toggle button
                   return Padding(
                     padding: const EdgeInsets.all(18),
                     child: Row(
@@ -58,7 +57,9 @@ class _HomePageState extends State<HomePage> {
                             Text(
                               'explore',
                               style: TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.normal),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.normal,
+                                  color: Color.fromARGB(255, 80, 79, 79)),
                             ),
                             Text(
                               'CRED',
@@ -92,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                         vertical: 10, horizontal: 10),
                     margin: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                      color: const Color(0xFF0d0d0d),
+                      color: const Color(0xFF000000),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Column(
@@ -101,7 +102,9 @@ class _HomePageState extends State<HomePage> {
                         Text(
                           section[sectionIndex].templateProperties.header.title,
                           style: const TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.bold),
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromARGB(255, 80, 79, 79)),
                         ),
                         const SizedBox(height: 10),
                         isGridView
@@ -144,7 +147,9 @@ class _HomePageState extends State<HomePage> {
                                           height: 64,
                                           decoration: BoxDecoration(
                                             border: Border.all(
-                                                color: Colors.grey, width: 1),
+                                                color: const Color.fromARGB(
+                                                    255, 34, 34, 34),
+                                                width: 1),
                                             shape: BoxShape.rectangle,
                                           ),
                                           child: Center(
@@ -168,8 +173,7 @@ class _HomePageState extends State<HomePage> {
                                               fontSize: 14,
                                               color: Colors.white,
                                               fontWeight: FontWeight.normal,
-                                              height:
-                                                  1.5, // Increase the line height
+                                              height: 1.5,
                                             ),
                                             textAlign: TextAlign.center,
                                           ),
@@ -240,8 +244,7 @@ class _HomePageState extends State<HomePage> {
                                                     color: Colors.white,
                                                     fontWeight:
                                                         FontWeight.normal,
-                                                    height:
-                                                        1.5, // Increase the line height
+                                                    height: 1.5,
                                                   ),
                                                   textAlign: TextAlign.left,
                                                 ),
@@ -251,9 +254,8 @@ class _HomePageState extends State<HomePage> {
                                                   style: const TextStyle(
                                                     fontSize: 12,
                                                     color: Color.fromARGB(
-                                                        255, 31, 30, 30),
-                                                    height:
-                                                        1.5, // Increase the line height
+                                                        255, 80, 79, 79),
+                                                    height: 1.5,
                                                   ),
                                                   textAlign: TextAlign.left,
                                                 ),

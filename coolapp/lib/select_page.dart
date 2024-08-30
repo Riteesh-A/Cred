@@ -15,7 +15,7 @@ class SelectPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0d0d0d),
+      backgroundColor: Colors.black,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
@@ -30,7 +30,6 @@ class SelectPage extends StatelessWidget {
                     iconUrl,
                     width: 120,
                     height: 120,
-                    scale: 0.8,
                   ),
                   Text.rich(
                     TextSpan(

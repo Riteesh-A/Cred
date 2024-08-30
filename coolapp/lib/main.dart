@@ -18,12 +18,11 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        fontFamily: 'Montserrat',
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.black,
-        ),
-        scaffoldBackgroundColor: const Color(0xFF0d0d0d),
-      ),
+          fontFamily: 'Montserrat',
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.black,
+          ),
+          scaffoldBackgroundColor: Colors.black),
       home: Scaffold(
         appBar: AppBar(),
         body: HomePage(),
