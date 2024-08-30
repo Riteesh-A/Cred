@@ -130,6 +130,9 @@ class _HomePageState extends State<HomePage> {
                                         MaterialPageRoute(
                                           builder: (context) => SelectPage(
                                             itemName: item.displayData.name,
+                                            iconUrl: item.displayData.iconUrl,
+                                            itemDesc:
+                                                item.displayData.description,
                                           ),
                                         ),
                                       );
@@ -190,6 +193,10 @@ class _HomePageState extends State<HomePage> {
                                             MaterialPageRoute(
                                               builder: (context) => SelectPage(
                                                 itemName: item.displayData.name,
+                                                iconUrl:
+                                                    item.displayData.iconUrl,
+                                                itemDesc: item
+                                                    .displayData.description,
                                               ),
                                             ),
                                           );

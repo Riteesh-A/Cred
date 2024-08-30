@@ -2,42 +2,74 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SelectPage extends StatelessWidget {
+  const SelectPage(
+      {Key? key,
+      required this.itemName,
+      required this.iconUrl,
+      required this.itemDesc})
+      : super(key: key);
   final String itemName;
-
-  const SelectPage({Key? key, required this.itemName}) : super(key: key);
+  final String iconUrl;
+  final String itemDesc;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF0d0d0d),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          Center(
-            child: Text.rich(
-              TextSpan(
+          Align(
+            alignment: Alignment.bottomLeft,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  TextSpan(
-                    text: 'CRED ',
-                    style: GoogleFonts.montserrat(
-                      color: Colors.white,
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold, // Make 'CRED' bold
+                  Image.network(
+                    iconUrl,
+                    width: 120,
+                    height: 120,
+                    scale: 0.8,
+                  ),
+                  Text.rich(
+                    TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'CRED ',
+                          style: GoogleFonts.montserrat(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        TextSpan(
+                          text: itemName,
+                          style: GoogleFonts.montserrat(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  TextSpan(
-                    text: itemName,
-                    style: GoogleFonts.montserrat(
-                      color: Colors.white,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700, // Normal weight for itemName
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20, bottom: 8),
+                    child: Text(
+                      itemDesc,
+                      style: GoogleFonts.lora(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
-                  ),
+                  )
                 ],
               ),
             ),
           ),
-          const Spacer(),
+          const SizedBox(height: 16),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Container(
@@ -60,7 +92,7 @@ class SelectPage extends StatelessWidget {
                 style: TextButton.styleFrom(
                   padding: const EdgeInsets.symmetric(
                     vertical: 12.0,
-                    horizontal: 72.0,
+                    horizontal: 92.0,
                   ),
                 ),
                 child: Row(
@@ -81,6 +113,7 @@ class SelectPage extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(height: 16),
         ],
       ),
     );
