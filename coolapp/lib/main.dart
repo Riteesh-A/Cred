@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:coolapp/home_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,12 +17,16 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
+      theme: ThemeData(
+        fontFamily: 'Montserrat',
+        appBarTheme: const AppBarTheme(
           backgroundColor: Colors.black,
         ),
+        scaffoldBackgroundColor: const Color(0xFF0d0d0d),
+      ),
+      home: Scaffold(
+        appBar: AppBar(),
         body: HomePage(),
-        backgroundColor: const Color(0xFF0d0d0d),
       ),
     );
   }

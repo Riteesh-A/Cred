@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:coolapp/select_page.dart';
 import 'package:http/http.dart' as http;
 import 'package:coolapp/model.dart';
 
@@ -124,8 +125,14 @@ class _HomePageState extends State<HomePage> {
                                       .items[itemIndex];
                                   return InkWell(
                                     onTap: () {
-                                      print(
-                                          'Item tapped: ${item.displayData.name}');
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => SelectPage(
+                                            itemName: item.displayData.name,
+                                          ),
+                                        ),
+                                      );
                                     },
                                     child: Column(
                                       children: [
@@ -156,6 +163,7 @@ class _HomePageState extends State<HomePage> {
                                             item.displayData.name,
                                             style: const TextStyle(
                                               fontSize: 14,
+                                              color: Colors.white,
                                               fontWeight: FontWeight.normal,
                                               height:
                                                   1.5, // Increase the line height
@@ -177,8 +185,14 @@ class _HomePageState extends State<HomePage> {
                                     children: [
                                       InkWell(
                                         onTap: () {
-                                          print(
-                                              'Item tapped: ${item.displayData.name}');
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) => SelectPage(
+                                                itemName: item.displayData.name,
+                                              ),
+                                            ),
+                                          );
                                         },
                                         child: Row(
                                           children: [
@@ -208,17 +222,36 @@ class _HomePageState extends State<HomePage> {
                                             ),
                                             const SizedBox(width: 8),
                                             Expanded(
-                                              child: Text(
-                                                item.displayData.name,
-                                                style: const TextStyle(
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.normal,
-                                                  height:
-                                                      1.5, // Increase the line height
+                                                child: Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Text(
+                                                  item.displayData.name,
+                                                  style: const TextStyle(
+                                                    fontSize: 14,
+                                                    color: Colors.white,
+                                                    fontWeight:
+                                                        FontWeight.normal,
+                                                    height:
+                                                        1.5, // Increase the line height
+                                                  ),
+                                                  textAlign: TextAlign.left,
                                                 ),
-                                                textAlign: TextAlign.left,
-                                              ),
-                                            ),
+                                                const SizedBox(height: 4),
+                                                Text(
+                                                  item.displayData.description,
+                                                  style: const TextStyle(
+                                                    fontSize: 12,
+                                                    color: Color.fromARGB(
+                                                        255, 31, 30, 30),
+                                                    height:
+                                                        1.5, // Increase the line height
+                                                  ),
+                                                  textAlign: TextAlign.left,
+                                                ),
+                                              ],
+                                            )),
                                           ],
                                         ),
                                       ),
